@@ -212,7 +212,8 @@
 {
     if (doneTintColor != _doneTintColor)
     {
-        [self.doneButton setTintColor:doneTintColor];
+        [self.doneButton setTitleTextAttributes:@{ NSForegroundColorAttributeName : doneTintColor }
+                                       forState:UIControlStateNormal];
         
         _doneTintColor = doneTintColor;
     }
