@@ -176,12 +176,22 @@
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
             [self.leftArrowButton setTintColor:segmentedControlTintControl];
             [self.rightArrowButton setTintColor:segmentedControlTintControl];
+            [self.leftArrowButton setTintColor:segmentedControlTintControl];
+            [self.rightArrowButton setTintColor:segmentedControlTintControl];
+            [self.leftArrowButton setTitleTextAttributes:@{ NSForegroundColorAttributeName : segmentedControlTintControl }
+                                                forState:UIControlStateNormal];
+            [self.rightArrowButton setTitleTextAttributes:@{ NSForegroundColorAttributeName : segmentedControlTintControl }
+                                                 forState:UIControlStateNormal];
         } else {
             [self.segmentedControl setTintColor:segmentedControlTintControl];
         }
         #else
         [self.leftArrowButton setTintColor:segmentedControlTintControl];
         [self.rightArrowButton setTintColor:segmentedControlTintControl];
+        [self.leftArrowButton setTitleTextAttributes:@{ NSForegroundColorAttributeName : segmentedControlTintControl }
+                                       forState:UIControlStateNormal];
+        [self.rightArrowButton setTitleTextAttributes:@{ NSForegroundColorAttributeName : segmentedControlTintControl }
+                                       forState:UIControlStateNormal];
         #endif
         
         _segmentedControlTintControl = segmentedControlTintControl;
