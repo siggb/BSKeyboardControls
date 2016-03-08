@@ -172,7 +172,17 @@
 {
     if (segmentedControlTintControl != _segmentedControlTintControl)
     {
-        [self.segmentedControl setTintColor:segmentedControlTintControl];
+        #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+            [self.leftArrowButton setTintColor:segmentedControlTintControl];
+            [self.rightArrowButton setTintColor:segmentedControlTintControl];
+        } else {
+            [self.segmentedControl setTintColor:segmentedControlTintControl];
+        }
+        #else
+        [self.leftArrowButton setTintColor:segmentedControlTintControl];
+        [self.rightArrowButton setTintColor:segmentedControlTintControl];
+        #endif
         
         _segmentedControlTintControl = segmentedControlTintControl;
     }
